@@ -2,22 +2,269 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Лабораторні роботи з Web-програмування</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторні роботи | Веб-програмування</title>
+    <style>
+        :root {
+            --primary: #278838;
+            --primary-hover: #1f6f2d;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .hub-card {
+            background-color: var(--card-bg);
+            max-width: 640px;
+            width: 100%;
+            border-radius: 16px;
+            padding: 36px 32px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .student-info h1 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .student-name {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        .group-badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .labs-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .lab-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lab-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: transparent;
+            transition: background-color 0.25s ease;
+        }
+
+        .lab-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(39, 136, 56, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .lab-item:hover::before {
+            background-color: var(--primary);
+        }
+
+        .lab-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .lab-number {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+        }
+
+        .lab-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .lab-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 500;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .arrow-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f8fafc;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .lab-item:hover .arrow-btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .arrow-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hub-footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 480px) {
+            .hub-card {
+                padding: 24px 18px;
+            }
+            .header-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .lab-item {
+                padding: 14px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Лабораторні роботи з Web-програмування</h1>
-        <p><strong>Студент:</strong> Bobyliak Nazar</p>
-        <p><strong>Група:</strong> КН-41</p>
-    </header>
-    <hr>
-    <main>
-        <h2>Список робіт:</h2>
-        <ul>
-            <li>
-                <a href="./lab_1/">Лабораторна робота №1: Блог «Мої 3 найкращі міста світу»</a>
-            </li>
-        </ul>
+
+    <main class="hub-card">
+        <header class="header-meta">
+            <div class="student-info">
+                <h1>Web-програмування</h1>
+                <p class="student-name">Студент: <strong>Bobyliak Nazar</strong></p>
+            </div>
+            <div class="group-badge">Група КН-41</div>
+        </header>
+
+        <h2 class="section-title">Практичні та лабораторні роботи</h2>
+
+        <div class="labs-grid">
+            <!-- Лабораторна 1 -->
+            <a href="lab_1/index.html" class="lab-item">
+                <div class="lab-details">
+                    <span class="lab-number">Лабораторна робота №1</span>
+                    <span class="lab-name">Блог «Мої 3 найкращі міста світу»</span>
+                    <div class="lab-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                </div>
+                <div class="arrow-btn" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+
+            <!-- Лабораторна 2 -->
+            <a href="lab_2/index.html" class="lab-item">
+                <div class="lab-details">
+                    <span class="lab-number">Лабораторна робота №2</span>
+                    <span class="lab-name">Акустична варта — моніторинг шуму</span>
+                    <div class="lab-tags">
+                        <span class="tag">Responsive</span>
+                        <span class="tag">Flexbox / Grid</span>
+                        <span class="tag">Form & Table</span>
+                    </div>
+                </div>
+                <div class="arrow-btn" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+
+        <footer class="hub-footer">
+            © 2026 ВСП «ФКІТ» НУ «Львівська політехніка»
+        </footer>
     </main>
+
 </body>
 </html>
