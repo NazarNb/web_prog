@@ -33,19 +33,19 @@
 
 Mobile (375px):
 
-![Mobile](/screen/image.png)
+![Mobile](./screen/mobile.png)
 
 Tablet (768px):
 
-![Tablet](/screen/image%20copy.png)
+![Tablet](./screen/tablet.png)
 
 Desktop (1024px):
 
-![Desktop 1024](/screen/image%20copy%202.png)
+![Desktop 1024](./screen/desktop-1024.png)
 
 Desktop (1200px):
 
-![Desktop 1200](/screen/image%20copy%203.png)
+![Desktop 1200](./screen/desktop-1200.png)
 
 ## Висновок
 
