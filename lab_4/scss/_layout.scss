@@ -1,0 +1,221 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.container {
+  @include m.container;
+}
+
+.section {
+  padding-block: v.$space-lg;
+
+  @include m.respond-to(v.$bp-tablet) {
+    padding-block: v.$space-xl;
+  }
+
+  &--last {
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 v.$space-xs 0;
+  }
+
+  &__subtitle {
+    margin: 0 0 v.$space-lg 0;
+    color: v.$color-muted;
+    font-size: 0.95rem;
+  }
+}
+
+// Шапка (Header)
+.header {
+  border-bottom: 1px solid v.$color-border;
+  background-color: v.$color-white;
+  padding-block: v.$space-md;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-md;
+
+    @include m.respond-to(v.$bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+// Hero секція
+.hero-section {
+  padding-block: v.$space-lg;
+  background-color: #fafbfc;
+
+  @include m.respond-to(v.$bp-tablet) {
+    padding-block: v.$space-xl;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-lg;
+  align-items: center;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    line-height: 1.2;
+    margin: 0 0 v.$space-md 0;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    color: v.$color-muted;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0 0 v.$space-lg 0;
+    max-width: 520px;
+  }
+
+  &__image img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: v.$radius;
+  }
+}
+
+// Поточний моніторинг (1 -> 2 -> 5)
+.monitoring-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+  margin-top: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(v.$bp-desktop) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+// Напрями роботи (1 -> 2 -> 4)
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+  margin-top: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(v.$bp-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Форма
+.order-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+
+  &__fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-md;
+
+    @include m.respond-to(v.$bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__description {
+    width: 100%;
+  }
+
+  @include m.respond-to(v.$bp-desktop) {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+
+    &__submit {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// Підвал
+.footer {
+  background-color: v.$color-footer;
+  color: v.$color-white;
+  padding-block: v.$space-xl;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-lg;
+
+    @include m.respond-to(v.$bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  &__slogan {
+    margin: v.$space-xs 0 0 0;
+    font-size: 0.85rem;
+    color: #a4b3c1;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-sm;
+
+    @include m.respond-to(v.$bp-tablet) {
+      align-items: flex-end;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-md;
+
+    @include m.respond-to(v.$bp-tablet) {
+      flex-direction: row;
+    }
+
+    a {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      transition: color 0.2s;
+
+      &:hover {
+        color: v.$color-white;
+      }
+    }
+  }
+
+  &__copy {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #8c9ba8;
+  }
+}

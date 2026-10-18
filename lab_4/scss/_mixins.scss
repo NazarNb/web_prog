@@ -1,0 +1,21 @@
+@use "variables" as v;
+
+// Міксин для медіа-запитів (Mobile First)
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Міксин центрування
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Міксин контейнера
+@mixin container {
+  width: min(100% - 32px, v.$container-max);
+  margin-inline: auto;
+}
