@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #0f1115;
+  color: #e6edf3;
+  padding: 30px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #2d333b;
+  padding-bottom: 20px;
+}
+
+.header-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #58a6ff;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #8b949e;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card.stat-critical {
+  border-color: #f8514944;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-val {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin-top: 6px;
+}
+
+.stat-critical .stat-val {
+  color: #f85149;
+}
+
+.controls-panel {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  color: #8b949e;
+}
+
+select, input {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+select:focus, input:focus {
+  border-color: #58a6ff;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: #238636;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #2ea043;
+}
+
+button.btn-secondary {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+}
+
+button.btn-secondary:hover {
+  background: #30363d;
+}
+
+.sensors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.sensor-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 18px;
+  border-left: 6px solid #8b949e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sensor-card.normal { border-left-color: #2ea043; }
+.sensor-card.warning { border-left-color: #d29922; }
+.sensor-card.critical { border-left-color: #f85149; }
+
+.sensor-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sensor-top h3 {
+  font-size: 18px;
+  color: #f0f6fc;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.badge.normal { background: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid rgba(46, 160, 67, 0.4); }
+.badge.warning { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.4); }
+.badge.critical { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.4); }
+
+.sensor-info p {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 6px;
+}
+
+.sensor-info p strong {
+  color: #c9d1d9;
+}
+
+.noise-metric {
+  margin: 10px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.noise-metric .value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f0f6fc;
+}
+
+.noise-metric .unit {
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.battery-tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #21262d;
+  color: #58a6ff;
+  margin-top: 4px;
+}
+
+.battery-tag.low {
+  color: #f85149;
+  font-weight: bold;
+}
+
+.sensor-card-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.sensor-card-actions button {
+  flex: 1;
+  padding: 7px 10px;
+  font-size: 12px;
+}
