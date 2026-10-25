@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Акустична варта — Лабораторна робота 6</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>Акустична варта</h1>
+        <p class="subtitle">Система міського моніторингу акустичного фону</p>
+      </div>
+    </header>
+
+    <!-- Секція Поточний моніторинг -->
+    <section class="current-monitoring">
+      <h2>Поточний моніторинг</h2>
+      <p class="section-desc">Огляд стану датчиків шуму в реальному часі на території міста.</p>
+    </section>
+
+    <!-- Нова секція за Лабораторною 6 -->
+    <section class="active-sensors">
+      <h2>Активні сенсори</h2>
+
+      <div class="sensor-filters">
+        <label class="filter-control">
+          <span>Район:</span>
+          <select id="district-filter">
+            <option value="all">Усі райони</option>
+            <option value="Галицький">Галицький</option>
+            <option value="Франківський">Франківський</option>
+            <option value="Шевченківський">Шевченківський</option>
+          </select>
+        </label>
+
+        <label class="filter-control filter-checkbox">
+          <input type="checkbox" id="critical-filter">
+          <span>Тільки критичні</span>
+        </label>
+      </div>
+
+      <div class="sensor-list"></div>
+    </section>
+  </div>
+
+<script src="./js/app.js"></script>
+</body>
+</html>
