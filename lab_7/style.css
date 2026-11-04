@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: #1e293b;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.sensors h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+.sensors__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.sensor-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #64748b;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sensor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.sensor-card--active {
+    border-left-color: #10b981;
+}
+
+.sensor-card--inactive {
+    border-left-color: #ef4444;
+}
+
+.sensor-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.sensor-card p {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.badge--active {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.badge--inactive {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.loading, .error {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.error {
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+}
